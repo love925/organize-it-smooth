@@ -6,99 +6,99 @@
 
 @layer base {
   :root {
-    /* Professional balanced theme - not too dark, not too light */
-    --background: 249 250 251; /* Very light gray */
-    --foreground: 17 24 39; /* Dark slate */
+    /* Beautiful Blue-Purple Theme with White */
+    --background: 255 255 255; /* Pure white background */
+    --foreground: 15 23 42; /* Deep slate text */
 
     --card: 255 255 255; /* Pure white cards */
-    --card-foreground: 17 24 39;
+    --card-foreground: 15 23 42;
 
     --popover: 255 255 255;
-    --popover-foreground: 17 24 39;
+    --popover-foreground: 15 23 42;
 
-    /* Sophisticated blue primary */
-    --primary: 219 234 254; /* Light blue */
-    --primary-solid: 37 99 235; /* Strong blue */
-    --primary-foreground: 30 58 138; /* Dark blue */
+    /* Blue-Purple Primary Gradient */
+    --primary: 238 242 255; /* Very light blue */
+    --primary-solid: 79 70 229; /* Indigo-600 */
+    --primary-foreground: 255 255 255; /* White text on primary */
 
-    /* Professional secondary */
-    --secondary: 243 244 246; /* Light gray */
-    --secondary-foreground: 55 65 81; /* Medium gray */
+    /* Purple Secondary */
+    --secondary: 248 250 252; /* Very light blue-gray */
+    --secondary-foreground: 51 65 85; /* Dark blue-gray */
 
     /* Subtle muted tones */
-    --muted: 249 250 251; /* Very light background */
-    --muted-foreground: 107 114 128; /* Subtle text */
+    --muted: 248 250 252; /* Very light blue background */
+    --muted-foreground: 100 116 139; /* Blue-gray text */
 
-    /* Professional accents */
-    --accent: 239 246 255; /* Very light blue */
-    --accent-foreground: 30 58 138; /* Dark blue */
-    --accent-solid: 59 130 246; /* Medium blue */
+    /* Purple accents */
+    --accent: 245 243 255; /* Very light purple */
+    --accent-foreground: 91 33 182; /* Purple-700 */
+    --accent-solid: 124 58 237; /* Purple-600 */
 
     /* Success and error colors */
-    --success: 34 197 94; /* Green */
+    --success: 34 197 94; /* Emerald-500 */
     --success-foreground: 255 255 255;
-    --warning: 245 158 11; /* Amber */
+    --warning: 245 158 11; /* Amber-500 */
     --warning-foreground: 255 255 255;
-    --destructive: 239 68 68; /* Red */
+    --destructive: 239 68 68; /* Red-500 */
     --destructive-foreground: 255 255 255;
 
-    /* Professional borders and inputs */
-    --border: 229 231 235; /* Light gray border */
-    --input: 243 244 246; /* Light input background */
-    --ring: 59 130 246; /* Blue focus ring */
+    /* Clean borders and inputs */
+    --border: 226 232 240; /* Slate-200 */
+    --input: 248 250 252; /* Very light blue input */
+    --ring: 79 70 229; /* Indigo focus ring */
 
-    /* Professional metrics colors */
-    --metric-primary: 16 185 129; /* Emerald */
-    --metric-secondary: 139 92 246; /* Violet */
-    --metric-accent: 245 158 11; /* Amber */
+    /* Vibrant metrics colors */
+    --metric-primary: 59 130 246; /* Blue-500 */
+    --metric-secondary: 139 92 246; /* Violet-500 */
+    --metric-accent: 168 85 247; /* Purple-500 */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Modern transitions */
+    /* Smooth transitions */
     --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
-    /* Dark mode - professional balance */
-    --background: 17 24 39; /* Dark slate */
-    --foreground: 248 250 252; /* Light text */
+    /* Dark Blue-Purple Theme */
+    --background: 15 23 42; /* Slate-900 */
+    --foreground: 248 250 252; /* Slate-50 */
 
-    --card: 30 41 59; /* Dark blue-gray cards */
+    --card: 30 41 59; /* Slate-800 */
     --card-foreground: 248 250 252;
 
     --popover: 30 41 59;
     --popover-foreground: 248 250 252;
 
-    /* Dark mode primary - lighter blue */
-    --primary: 30 58 138; /* Dark blue background */
-    --primary-solid: 96 165 250; /* Light blue */
-    --primary-foreground: 219 234 254; /* Very light blue */
+    /* Dark mode blue-purple primary */
+    --primary: 30 41 59; /* Dark slate background */
+    --primary-solid: 129 140 248; /* Indigo-400 */
+    --primary-foreground: 15 23 42; /* Dark text on light primary */
 
-    --secondary: 51 65 85; /* Medium dark */
-    --secondary-foreground: 203 213 225; /* Light gray */
+    --secondary: 51 65 85; /* Slate-700 */
+    --secondary-foreground: 203 213 225; /* Slate-300 */
 
-    --muted: 30 41 59; /* Dark muted */
-    --muted-foreground: 148 163 184; /* Medium light gray */
+    --muted: 51 65 85; /* Slate-700 */
+    --muted-foreground: 148 163 184; /* Slate-400 */
 
-    --accent: 30 58 138; /* Dark blue accent */
-    --accent-foreground: 219 234 254; /* Light blue */
-    --accent-solid: 96 165 250; /* Bright blue */
+    --accent: 67 56 202; /* Indigo-600 dark */
+    --accent-foreground: 238 242 255; /* Indigo-50 */
+    --accent-solid: 165 180 252; /* Indigo-300 */
 
-    --success: 34 197 94;
-    --success-foreground: 255 255 255;
-    --warning: 245 158 11;
-    --warning-foreground: 255 255 255;
-    --destructive: 248 113 113;
-    --destructive-foreground: 255 255 255;
+    --success: 52 211 153; /* Emerald-400 */
+    --success-foreground: 6 78 59; /* Emerald-900 */
+    --warning: 251 191 36; /* Amber-400 */
+    --warning-foreground: 92 25 2; /* Amber-900 */
+    --destructive: 248 113 113; /* Red-400 */
+    --destructive-foreground: 127 29 29; /* Red-900 */
 
-    --border: 51 65 85; /* Dark border */
-    --input: 51 65 85; /* Dark input */
-    --ring: 96 165 250; /* Light blue ring */
+    --border: 51 65 85; /* Slate-700 */
+    --input: 51 65 85; /* Slate-700 */
+    --ring: 129 140 248; /* Indigo-400 ring */
 
-    --metric-primary: 52 211 153; /* Light emerald */
-    --metric-secondary: 167 139 250; /* Light violet */
-    --metric-accent: 251 191 36; /* Light amber */
+    --metric-primary: 96 165 250; /* Blue-400 */
+    --metric-secondary: 196 181 253; /* Violet-300 */
+    --metric-accent: 196 181 253; /* Purple-300 */
   }
 }
 
