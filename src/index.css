@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    /* Beautiful Blue-Purple Theme with White */
-    --background: 255 255 255; /* Pure white background */
-    --foreground: 15 23 42; /* Deep slate text */
+    /* Beautiful Blue-Purple Theme with White - All HSL Values */
+    --background: 0 0% 100%; /* Pure white background */
+    --foreground: 222 84% 5%; /* Deep slate text */
 
-    --card: 255 255 255; /* Pure white cards */
-    --card-foreground: 15 23 42;
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 222 84% 5%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
 
-    /* Blue-Purple Primary Gradient */
-    --primary: 238 242 255; /* Very light blue */
-    --primary-solid: 79 70 229; /* Indigo-600 */
-    --primary-foreground: 255 255 255; /* White text on primary */
+    /* Blue-Purple Primary */
+    --primary: 229 84% 97%; /* Very light blue */
+    --primary-solid: 239 84% 67%; /* Indigo-400 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
     /* Purple Secondary */
-    --secondary: 248 250 252; /* Very light blue-gray */
-    --secondary-foreground: 51 65 85; /* Dark blue-gray */
+    --secondary: 210 40% 98%; /* Very light blue-gray */
+    --secondary-foreground: 215 25% 27%; /* Dark blue-gray */
 
     /* Subtle muted tones */
-    --muted: 248 250 252; /* Very light blue background */
-    --muted-foreground: 100 116 139; /* Blue-gray text */
+    --muted: 210 40% 98%; /* Very light blue background */
+    --muted-foreground: 215 16% 47%; /* Blue-gray text */
 
     /* Purple accents */
-    --accent: 245 243 255; /* Very light purple */
-    --accent-foreground: 91 33 182; /* Purple-700 */
-    --accent-solid: 124 58 237; /* Purple-600 */
+    --accent: 270 100% 98%; /* Very light purple */
+    --accent-foreground: 263 70% 50%; /* Purple-700 */
+    --accent-solid: 262 83% 58%; /* Purple-600 */
 
     /* Success and error colors - Blue/Purple variants only */
-    --success: 59 130 246; /* Blue-500 */
-    --success-foreground: 255 255 255;
-    --warning: 124 58 237; /* Purple-600 */
-    --warning-foreground: 255 255 255;
-    --destructive: 147 51 234; /* Purple-600 dark */
-    --destructive-foreground: 255 255 255;
+    --success: 213 94% 68%; /* Blue-400 */
+    --success-foreground: 0 0% 100%;
+    --warning: 262 83% 58%; /* Purple-600 */
+    --warning-foreground: 0 0% 100%;
+    --destructive: 271 91% 65%; /* Purple-500 */
+    --destructive-foreground: 0 0% 100%;
 
     /* Clean borders and inputs */
-    --border: 226 232 240; /* Slate-200 */
-    --input: 248 250 252; /* Very light blue input */
-    --ring: 79 70 229; /* Indigo focus ring */
+    --border: 214 32% 91%; /* Slate-200 */
+    --input: 210 40% 98%; /* Very light blue input */
+    --ring: 239 84% 67%; /* Indigo focus ring */
 
     /* Vibrant metrics colors */
-    --metric-primary: 59 130 246; /* Blue-500 */
-    --metric-secondary: 139 92 246; /* Violet-500 */
-    --metric-accent: 168 85 247; /* Purple-500 */
+    --metric-primary: 213 94% 68%; /* Blue-400 */
+    --metric-secondary: 258 90% 66%; /* Violet-400 */
+    --metric-accent: 271 91% 65%; /* Purple-500 */
 
     --radius: 0.75rem;
     
@@ -60,45 +60,45 @@
   }
 
   .dark {
-    /* Dark Blue-Purple Theme */
-    --background: 15 23 42; /* Slate-900 */
-    --foreground: 248 250 252; /* Slate-50 */
+    /* Dark Blue-Purple Theme - All HSL Values */
+    --background: 222 84% 5%; /* Slate-900 */
+    --foreground: 210 40% 98%; /* Slate-50 */
 
-    --card: 30 41 59; /* Slate-800 */
-    --card-foreground: 248 250 252;
+    --card: 215 28% 17%; /* Slate-800 */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
 
     /* Dark mode blue-purple primary */
-    --primary: 30 41 59; /* Dark slate background */
-    --primary-solid: 129 140 248; /* Indigo-400 */
-    --primary-foreground: 15 23 42; /* Dark text on light primary */
+    --primary: 215 28% 17%; /* Dark slate background */
+    --primary-solid: 239 84% 67%; /* Indigo-400 */
+    --primary-foreground: 222 84% 5%; /* Dark text on light primary */
 
-    --secondary: 51 65 85; /* Slate-700 */
-    --secondary-foreground: 203 213 225; /* Slate-300 */
+    --secondary: 215 25% 27%; /* Slate-700 */
+    --secondary-foreground: 214 32% 91%; /* Slate-300 */
 
-    --muted: 51 65 85; /* Slate-700 */
-    --muted-foreground: 148 163 184; /* Slate-400 */
+    --muted: 215 25% 27%; /* Slate-700 */
+    --muted-foreground: 215 16% 65%; /* Slate-400 */
 
-    --accent: 67 56 202; /* Indigo-600 dark */
-    --accent-foreground: 238 242 255; /* Indigo-50 */
-    --accent-solid: 165 180 252; /* Indigo-300 */
+    --accent: 263 70% 50%; /* Indigo-600 dark */
+    --accent-foreground: 229 84% 97%; /* Indigo-50 */
+    --accent-solid: 239 84% 78%; /* Indigo-300 */
 
-    --success: 96 165 250; /* Blue-400 */
-    --success-foreground: 30 58 138; /* Blue-900 */
-    --warning: 196 181 253; /* Violet-300 */
-    --warning-foreground: 55 48 163; /* Indigo-800 */
-    --destructive: 168 85 247; /* Purple-400 */
-    --destructive-foreground: 88 28 135; /* Purple-900 */
+    --success: 213 94% 68%; /* Blue-400 */
+    --success-foreground: 213 97% 87%; /* Blue-100 */
+    --warning: 258 90% 66%; /* Violet-400 */
+    --warning-foreground: 263 93% 87%; /* Indigo-100 */
+    --destructive: 271 91% 65%; /* Purple-400 */
+    --destructive-foreground: 270 100% 87%; /* Purple-100 */
 
-    --border: 51 65 85; /* Slate-700 */
-    --input: 51 65 85; /* Slate-700 */
-    --ring: 129 140 248; /* Indigo-400 ring */
+    --border: 215 25% 27%; /* Slate-700 */
+    --input: 215 25% 27%; /* Slate-700 */
+    --ring: 239 84% 67%; /* Indigo-400 ring */
 
-    --metric-primary: 96 165 250; /* Blue-400 */
-    --metric-secondary: 196 181 253; /* Violet-300 */
-    --metric-accent: 196 181 253; /* Purple-300 */
+    --metric-primary: 213 94% 68%; /* Blue-400 */
+    --metric-secondary: 258 90% 66%; /* Violet-400 */
+    --metric-accent: 271 91% 65%; /* Purple-400 */
   }
 }
 
