@@ -60,28 +60,28 @@
   }
 
   .dark {
-    /* Dark Blue-Purple Theme - All HSL Values */
-    --background: 222 84% 5%; /* Slate-900 */
+    /* Lighter Dark Blue-Purple Theme - All HSL Values */
+    --background: 222 47% 11%; /* Lighter dark background */
     --foreground: 210 40% 98%; /* Slate-50 */
 
-    --card: 215 28% 17%; /* Slate-800 */
+    --card: 215 25% 20%; /* Lighter card background */
     --card-foreground: 210 40% 98%;
 
-    --popover: 215 28% 17%;
+    --popover: 215 25% 20%;
     --popover-foreground: 210 40% 98%;
 
     /* Dark mode blue-purple primary */
-    --primary: 215 28% 17%; /* Dark slate background */
+    --primary: 215 25% 20%; /* Lighter primary background */
     --primary-solid: 239 84% 67%; /* Indigo-400 */
     --primary-foreground: 222 84% 5%; /* Dark text on light primary */
 
-    --secondary: 215 25% 27%; /* Slate-700 */
+    --secondary: 215 20% 35%; /* Lighter secondary */
     --secondary-foreground: 214 32% 91%; /* Slate-300 */
 
-    --muted: 215 25% 27%; /* Slate-700 */
+    --muted: 215 20% 35%; /* Lighter muted */
     --muted-foreground: 215 16% 65%; /* Slate-400 */
 
-    --accent: 263 70% 50%; /* Indigo-600 dark */
+    --accent: 263 70% 60%; /* Lighter accent */
     --accent-foreground: 229 84% 97%; /* Indigo-50 */
     --accent-solid: 239 84% 78%; /* Indigo-300 */
 
@@ -92,8 +92,8 @@
     --destructive: 271 91% 65%; /* Purple-400 */
     --destructive-foreground: 270 100% 87%; /* Purple-100 */
 
-    --border: 215 25% 27%; /* Slate-700 */
-    --input: 215 25% 27%; /* Slate-700 */
+    --border: 215 20% 35%; /* Lighter borders */
+    --input: 215 20% 35%; /* Lighter inputs */
     --ring: 239 84% 67%; /* Indigo-400 ring */
 
     --metric-primary: 213 94% 68%; /* Blue-400 */
