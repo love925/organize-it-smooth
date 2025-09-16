@@ -23,8 +23,16 @@ import {
   Music,
   Zap,
   Snowflake,
-  Sparkles
+  Sparkles,
+  Edit3
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface VendorSearchResult {
   id: string;
@@ -72,6 +80,8 @@ export default function SearchPage() {
   const [decorResults, setDecorResults] = useState<DecorSearchResult[]>([]);
   const [isVendorSearching, setIsVendorSearching] = useState(false);
   const [isDecorSearching, setIsDecorSearching] = useState(false);
+  const [editingDecor, setEditingDecor] = useState<DecorSearchResult | null>(null);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
   // Mock vendor search results
   const mockVendorResults: VendorSearchResult[] = [
@@ -158,6 +168,23 @@ export default function SearchPage() {
   const handleExportDecorData = () => {
     // Mock PDF export functionality
     alert("Decor data exported to PDF successfully!");
+  };
+
+  const handleEditDecor = (decor: DecorSearchResult) => {
+    setEditingDecor(decor);
+    setIsEditDialogOpen(true);
+  };
+
+  const handleSaveDecorEdit = () => {
+    if (editingDecor) {
+      setDecorResults(prev => 
+        prev.map(item => 
+          item.id === editingDecor.id ? editingDecor : item
+        )
+      );
+      setIsEditDialogOpen(false);
+      setEditingDecor(null);
+    }
   };
 
   const vendorTotal = vendorResults.reduce((sum, result) => sum + result.amount, 0);
@@ -444,23 +471,31 @@ export default function SearchPage() {
                 <CardContent>
                   <div className="space-y-4">
                     {decorResults.map((result) => (
-                      <div
-                        key={result.id}
-                        className="p-4 border rounded-lg space-y-3"
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="space-y-1">
-                            <div className="flex items-center space-x-2">
-                              <Badge variant="secondary">{result.id}</Badge>
-                              <Badge variant="outline">{result.eventId}</Badge>
+                        <div
+                          key={result.id}
+                          className="p-4 border rounded-lg space-y-3"
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-2">
+                                <Badge variant="secondary">{result.id}</Badge>
+                                <Badge variant="outline">{result.eventId}</Badge>
+                              </div>
+                              <div className="font-semibold">{result.clientName}</div>
+                              <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                                <Calendar className="h-3 w-3" />
+                                {result.date}
+                              </div>
                             </div>
-                            <div className="font-semibold">{result.clientName}</div>
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                              <Calendar className="h-3 w-3" />
-                              {result.date}
-                            </div>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleEditDecor(result)}
+                            >
+                              <Edit3 className="h-4 w-4 mr-2" />
+                              Edit
+                            </Button>
                           </div>
-                        </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           <div className="text-center p-2 bg-muted rounded">
@@ -503,6 +538,110 @@ export default function SearchPage() {
           )}
         </TabsContent>
       </Tabs>
+
+      {/* Edit Decor Dialog */}
+      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Edit Decor Data</DialogTitle>
+          </DialogHeader>
+          {editingDecor && (
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label>Client Name</Label>
+                <Input
+                  value={editingDecor.clientName}
+                  onChange={(e) => setEditingDecor({...editingDecor, clientName: e.target.value})}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label>Event Date</Label>
+                <Input
+                  type="date"
+                  value={editingDecor.date}
+                  onChange={(e) => setEditingDecor({...editingDecor, date: e.target.value})}
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>DJ Count</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.djCount}
+                    onChange={(e) => setEditingDecor({...editingDecor, djCount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>DJ Amount</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.djAmount}
+                    onChange={(e) => setEditingDecor({...editingDecor, djAmount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Cool Fire Count</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.coolFireCount}
+                    onChange={(e) => setEditingDecor({...editingDecor, coolFireCount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>Cool Fire Amount</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.coolFireAmount}
+                    onChange={(e) => setEditingDecor({...editingDecor, coolFireAmount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Ice Pot Count</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.icePotCount}
+                    onChange={(e) => setEditingDecor({...editingDecor, icePotCount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>Ice Pot Amount</Label>
+                  <Input
+                    type="number"
+                    value={editingDecor.icePotAmount}
+                    onChange={(e) => setEditingDecor({...editingDecor, icePotAmount: parseInt(e.target.value) || 0})}
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label>Confetti Amount</Label>
+                <Input
+                  type="number"
+                  value={editingDecor.confettiAmount}
+                  onChange={(e) => setEditingDecor({...editingDecor, confettiAmount: parseInt(e.target.value) || 0})}
+                />
+              </div>
+
+              <div className="flex justify-end space-x-2 pt-4">
+                <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button onClick={handleSaveDecorEdit}>
+                  Save Changes
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
